@@ -2,8 +2,12 @@
 Simple todo list built with React, Express, Postgres and Node. 
 
 # Current Features 
+* List todos 
+* Edit todos 
+* Delete todos 
+* Create todos 
 
-# Bugs to Work on
+# Bugs/Clean Up todo 
 * TodoList - update todo status when checked 
 * EditTodo - modal, when clicking Edit for multiple todos we see same todo description
 

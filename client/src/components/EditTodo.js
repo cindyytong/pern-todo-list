@@ -3,7 +3,6 @@ import React, {Fragment, useState} from "react";
 const EditTodo = ({todo}) => {
     const [description, setDescription] = useState(todo.description);
 
-    debugger
     const editText = async(id) => {
         try{
             const body = { description };

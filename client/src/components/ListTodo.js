@@ -3,6 +3,7 @@ import EditTodo from "./EditTodo";
 
 const ListTodo = () => {
     const [todos, setTodos] = useState([]);
+    
 
     async function getTodos(){
         const res = await fetch("http://localhost:5000/todos");
@@ -24,6 +25,26 @@ const ListTodo = () => {
                 }
             );
             setTodos(todos.filter(todo => todo.todo_id !== id))
+        } catch(e) {
+            console.error(e.message);
+        }
+    };
+
+    // TODO update this
+
+    async function editStatus(id, currStatus){
+        try {
+            const body = { status: currStatus }
+            const res = await fetch(
+                `http://localhost:5000/todos${id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(body)
+                }
+            );
+            window.location = "/"
         } catch(e) {
             console.error(e.message);
         }
@@ -51,7 +72,7 @@ const ListTodo = () => {
                             <button className='btn btn-danger' onClick={() => deleteTodo(todo.todo_id)}>Delete</button>
                         </td>
                         <td>
-                            <input className="form-check-input" type="checkbox" checked={todos.status}></input>
+                            <input className="form-check-input" type="checkbox" checked={todo.status}></input>
                         </td>
                     </tr>
                 ))}
