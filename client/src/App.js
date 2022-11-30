@@ -1,10 +1,13 @@
 import React, {Fragment, fragment} from "react";
 import './App.css';
+import InputTodo from "./components/InputTodo";
+import ListTodo from "./components/ListTodo";
 
 function App() {
   return (
     <Fragment>
-      App
+      <InputTodo/>
+      <ListTodo/>
     </Fragment>
   );
 }

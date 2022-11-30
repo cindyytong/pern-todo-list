@@ -3,6 +3,10 @@ Simple todo list built with React, Express, Postgres and Node.
 
 # Current Features 
 
+# Bugs to Work on
+* TodoList - update todo status when checked 
+* EditTodo - modal, when clicking Edit for multiple todos we see same todo description
+
 # Future Features 
 * User can create, delete and edit todos to a single todo list.
 * User can set the status of a todo as completed. 
